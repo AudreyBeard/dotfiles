@@ -36,10 +36,50 @@ echo "}" >> ~/.zshrc
 
 ## tmux stuff
 echo "" >> ~/.zshrc
+echo "# TMux stuff" >> ~/.zshrc
 echo "alias tmux-attach='tmux attach -t'" >> ~/.zshrc
 echo "alias tmux-new='tmux new -s'" >> ~/.zshrc
 
-
+## Venv stuff
+echo "" >> ~/.zshrc
+echo "# Venv stuff" >> ~/.zshrc
+echo "export VENV_HOME=\"$HOME/.venv\"" >> ~/.zshrc
+echo "[[ -d $VENV_HOME ]] || mkdir $VENV_HOME" >> ~/.zshrc
+echo "venv() {" >> ~/.zshrc
+echo "  if [ $# -eq 0 ]" >> ~/.zshrc
+echo "    then" >> ~/.zshrc
+echo "      echo \"Please provide venv name\"" >> ~/.zshrc
+echo "    else" >> ~/.zshrc
+echo "      source \"$VENV_HOME/$1/bin/activate\"" >> ~/.zshrc
+echo "  fi" >> ~/.zshrc
+echo "}" >> ~/.zshrc
+echo "workon() {" >> ~/.zshrc
+echo "  if [ $# -eq 0 ]" >> ~/.zshrc
+echo "    then" >> ~/.zshrc
+echo "      echo \"Please provide venv name\"" >> ~/.zshrc
+echo "    else" >> ~/.zshrc
+echo "      source \"$VENV_HOME/$1/bin/activate\"" >> ~/.zshrc
+echo "  fi" >> ~/.zshrc
+echo "}" >> ~/.zshrc
+echo "mkvenv() {" >> ~/.zshrc
+echo "  if [ $# -eq 0 ]" >> ~/.zshrc
+echo "    then" >> ~/.zshrc
+echo "      echo \"Please provide venv name\"" >> ~/.zshrc
+echo "    else" >> ~/.zshrc
+echo "      python3 -m venv $VENV_HOME/$1" >> ~/.zshrc
+echo "  fi" >> ~/.zshrc
+echo "}" >> ~/.zshrc
+echo "rmvenv() {" >> ~/.zshrc
+echo "  if [ $# -eq 0 ]" >> ~/.zshrc
+echo "    then" >> ~/.zshrc
+echo "      echo \"Please provide venv name\"" >> ~/.zshrc
+echo "    else" >> ~/.zshrc
+echo "      rm -r $VENV_HOME/$1" >> ~/.zshrc
+echo "  fi" >> ~/.zshrc
+echo "}" >> ~/.zshrc
+echo "lsvenv(){" >> ~/.zshrc
+echo "    ls $VENV_HOME" >> ~/.zshrc
+echo "}" >> ~/.zshrc
 
 # Color schemes 
 # https://github.com/lysyi3m/macos-terminal-themes
