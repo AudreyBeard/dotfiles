@@ -27,9 +27,6 @@ pip3 install flake8
 # Install Oh My ZSH -----------------------------------------------------------
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-## Use Brew-installed binaries before others (specifically Vim)
-echo "export PATH=/opt/homebrew/bin:\$PATH" >> ~/.zshrc
-
 ## cs function
 echo "" >> ~/.zshrc
 echo "# CS: combines cd and ls in one easy command" >> ~/.zshrc
@@ -66,3 +63,11 @@ cp -r ~/.vim/bundle/nerdtree/autoload ~/.vim/autoload/nerdtree
 cd $HERE
 
 cp $HERE/../.vimrc ~/.vimrc
+
+mkdir -p ~/.local/bin
+
+cp $HERE/../bin/* ~/.local/bin
+
+## Use Brew-installed binaries before others (specifically Vim)
+echo "export PATH=\$HOME/.local/bin:/opt/homebrew/bin:\$PATH" >> ~/.zshrc
+
