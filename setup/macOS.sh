@@ -34,6 +34,13 @@ echo "function cs () {" >> ~/.zshrc
 echo "  cd \"$@\" && ls" >> ~/.zshrc
 echo "}" >> ~/.zshrc
 
+## tmux stuff
+echo "" >> ~/.zshrc
+echo "alias tmux-attach='tmux attach -t'" >> ~/.zshrc
+echo "alias tmux-new='tmux new -s'" >> ~/.zshrc
+
+
+
 # Color schemes 
 # https://github.com/lysyi3m/macos-terminal-themes
 # Right now I'm digging Afterglow
