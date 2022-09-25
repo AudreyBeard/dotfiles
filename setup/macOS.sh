@@ -118,3 +118,8 @@ cp $HERE/../bin/* ~/.local/bin
 ## Use Brew-installed binaries before others (specifically Vim)
 echo "export PATH=\$HOME/.local/bin:/opt/homebrew/bin:\$PATH" >> ~/.zshrc
 
+# Set difftool
+git config --global diff.tool vimdiff
+git config --global merge.tool vimdiff
+git config --global --add difftool.prompt false
+
