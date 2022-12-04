@@ -20,6 +20,7 @@ sudo apt-get install -y \
 	wget \
 	pip \
 	openssh-server \
+    docker \
 	ffmpeg
 
 python3 -m pip install --upgrade pip
