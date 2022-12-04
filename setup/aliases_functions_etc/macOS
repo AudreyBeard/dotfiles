@@ -1,0 +1,2 @@
+## Use Brew-installed binaries before others (specifically Vim)
+export PATH=\$HOME/.local/bin:/opt/homebrew/bin:\$PATH
