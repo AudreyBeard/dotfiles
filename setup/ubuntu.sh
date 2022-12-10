@@ -21,6 +21,8 @@ sudo apt-get install -y \
 	pip \
 	openssh-server \
     docker \
+    docker-compose \
+    cifs-utils \
 	ffmpeg
 
 python3 -m pip install --upgrade pip
