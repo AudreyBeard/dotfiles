@@ -72,3 +72,6 @@ git config --global diff.tool vimdiff
 git config --global merge.tool vimdiff
 git config --global --add difftool.prompt false
 
+# Mount my shit
+sudo mkdir -p /media/nastyboi/home
+sudo mkdir -p /media/nastyboi/share
