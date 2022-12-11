@@ -75,3 +75,7 @@ git config --global --add difftool.prompt false
 # Mount my shit
 sudo mkdir -p /media/nastyboi/home
 sudo mkdir -p /media/nastyboi/share
+
+# Docker group to avoid having to sudo everything
+sudo groupadd docker
+sudo usermod -aG docker $USER
