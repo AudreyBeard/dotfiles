@@ -1,0 +1,32 @@
+#!/bin/bash
+
+fpath_credentials="/home/audrey/.secrets/smb"
+dpath_remote="//192.168.1.252/home"
+dpath_local="/media/nastyboi/home"
+
+Help()
+{
+    echo "Mount Samba to multiple points"
+    echo "Syntax: mount_smb [-h|-c|-r|-l]"
+    echo "    -h    this Help message"
+    echo "    -c    Credentials"
+    echo "    -r    Remote path"
+    echo "    -l    Local path"
+}
+
+while getopts ":h" option; do
+    case $option in
+        h)
+            Help
+            exit;;
+        c)
+            fpath_credentials=$OPTARG;;
+        r)
+            dpath_remote=$OPTARG;;
+        l)
+            dpath_local=$OPTARG;;
+    esac
+done
+
+mount -t cifs -o rw,vers=3.0,credentials="$fpath_credentials",uid=$(id -u),gid=$(id -u),forceuid,forcegid $dpath_remote $dpath_local
+# https://unix.stackexchange.com/questions/68079/mount-cifs-network-drive-write-permissions-and-chown#68081
